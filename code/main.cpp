@@ -1,24 +1,27 @@
-#include <bits/stdc++.h>
-
-using namespace std;
+/**
+ *    author:  VladimirSlastin
+ *    created: 19.01.2022.
+ *    C++20
+**/
+#include <iostream>
 
 struct stak {
 private:
-    int val;
-    int l = 0;
+    int value;
+    int size = 0;
     stak* prev;
     stak* s = nullptr;
 public:
-    stak () : val(0), l(0), prev(), s(nullptr) {}
+    stak () : value(0), size(0), prev(), s(nullptr) {}
 
     void push_me (int x) {
         stak* n = new stak();
-        n->val = x;
+        n->value = x;
         n->prev = s;
         if (s == nullptr)
-            n->l = 1;
+            n->size = 1;
         else
-            n->l = s->l + 1;
+            n->size = s->size + 1;
         s = n;
     }
 
@@ -29,7 +32,7 @@ public:
     }
 
     [[nodiscard]] int top_me () const {
-        return s->val;
+        return s->value;
     }
 
     [[nodiscard]] bool empty_me () const {
@@ -43,11 +46,11 @@ public:
         if (s == nullptr)
             return 0;
         else
-            return s->l;
+            return s->size;
     }
 
     void clear_me () {
-        s->val = 0;
+        s->value = 0;
         s->prev = nullptr;
         s = nullptr;
     }
@@ -57,36 +60,36 @@ signed main () {
 
     stak rosbinik;
     while (true) {
-        string s;
-        cin >> s;
+        std::string s;
+        std::cin >> s;
         if (s == "push") {
             int n;
-            cin >> n;
+            std::cin >> n;
             rosbinik.push_me(n);
-            cout << "ok\n";
+            std::cout << "ok\n";
         }
         if (s == "pop") {
             if (!rosbinik.empty_me()) {
-                cout << rosbinik.top_me() << '\n';
+                std::cout << rosbinik.top_me() << '\n';
                 rosbinik.pop_me();
             } else
-                cout << "error\n";
+                std::cout << "error\n";
         }
         if (s == "back") {
             if (!rosbinik.empty_me())
-                cout << rosbinik.top_me() << '\n';
+                std::cout << rosbinik.top_me() << '\n';
             else
-                cout << "error\n";
+                std::cout << "error\n";
         }
         if (s == "clear") {
             if (!rosbinik.empty_me())
                 rosbinik.clear_me();
-            cout << "ok\n";
+            std::cout << "ok\n";
         }
         if (s == "size")
-            cout << rosbinik.size_me() << '\n';
+            std::cout << rosbinik.size_me() << '\n';
         if (s == "exit") {
-            cout << "bye\n";
+            std::cout << "bye\n";
             return 0;
         }
     }
