@@ -1,9 +1,11 @@
 # class Stack (simple version)
-![man and stack](https://github.com/Avais03/class-Stack-simple-version-/blob/main/gif.webp)
+![man and stack](https://github.com/Avais03/class-Stack-simple-version-/blob/main/for%20README/gif.webp)
 
 Здесь представленна реализация простой версии класса стек (программы, работающей с классом `stack`), которая работает с числами типа `int`.
-![stack](https://github.com/Avais03/class-Stack-simple-version-/blob/main/stack.webp)
-<h4>Поддериваемы запросы:</h4>
+
+![stack](https://github.com/Avais03/class-Stack-simple-version-/blob/main/for%20README/stack.webp)
+
+<h4>Поддерживаемые запросы:</h4>
 
 + `push n`: добавить число `n` в конец стека и вывести `ok`;
 + `pop`: удалить из стека последний элемент и вывести его значение, либо вывести `error`, если стек был пуст;
