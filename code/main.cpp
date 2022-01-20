@@ -5,7 +5,7 @@
 **/
 #include <iostream>
 
-struct stak {
+class stak {
 private:
     int value;
     int size = 0;
